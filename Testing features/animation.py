@@ -32,6 +32,3 @@ def update(frame):
 ani = FuncAnimation(fig, update, interval=50, frames=np.linspace(0, 2*np.pi, 128),
                     init_func=init, blit=True)
 graph.show()
-
-
-x = '1'
