@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-08-04T01:13:15.822Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="Dy3UHzS97Plr9bCu0LJp" version="21.6.6" type="device">
+<mxfile host="app.diagrams.net" modified="2023-08-07T21:51:00.244Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="O-rxs2AYmuqnQLsInW0R" version="21.6.6" type="device">
   <diagram id="wFE0QG_FPsp0jaGvCLVb" name="Page-1">
-    <mxGraphModel dx="934" dy="546" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1059" dy="619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,32 +9,27 @@
         </mxCell>
         <object label="TO DO" status="New" id="_5mSTuPxr-ZiKRkBDSY7-2">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=none;fillStyle=solid;fillColor=#A0522D;" parent="_5mSTuPxr-ZiKRkBDSY7-1" vertex="1">
-            <mxGeometry y="28" width="180" height="521" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="&lt;font style=&quot;&quot;&gt;GUI inputs for graph data&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-3">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="21" width="140" height="80" as="geometry" />
+            <mxGeometry y="28" width="180" height="502" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;Displaying graphs on GUI&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-4">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="121" width="140" height="80" as="geometry" />
+            <mxGeometry x="20" y="21" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;Other graph calculations&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-5">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="221" width="140" height="80" as="geometry" />
+            <mxGeometry x="20" y="121" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Pep-8 compliant + comments&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;%status%&lt;/span&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-12">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
-            <mxGeometry x="20" y="321" width="140" height="80" as="geometry" />
+            <mxGeometry x="20" y="221" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Aesthetics&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;%status%&lt;/span&gt;" placeholders="1" id="YK0xP2-TA1pDTYtIcs2m-3">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;fillStyle=solid;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-2">
-            <mxGeometry x="20" y="421" width="140" height="80" as="geometry" />
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#b85450;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-2" vertex="1">
+            <mxGeometry x="20" y="321" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="DOING" status="In progress" id="_5mSTuPxr-ZiKRkBDSY7-6">
@@ -47,13 +42,13 @@
             <mxGeometry x="20" y="21" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Testing calculations&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-8">
+        <object label="&lt;font style=&quot;&quot;&gt;Allowing for initial height input in calculations&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="YK0xP2-TA1pDTYtIcs2m-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-6" vertex="1">
             <mxGeometry x="20" y="121" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Allowing for initial height input in calculations&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="YK0xP2-TA1pDTYtIcs2m-2">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;fillStyle=solid;" vertex="1" parent="_5mSTuPxr-ZiKRkBDSY7-6">
+        <object label="&lt;font style=&quot;&quot;&gt;GUI inputs for graph data&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-3">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#82b366;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-6" vertex="1">
             <mxGeometry x="20" y="221" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
@@ -62,14 +57,9 @@
             <mxGeometry x="360" y="28" width="180" height="502" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Matplotlib animations&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-10">
+        <object label="&lt;font style=&quot;&quot;&gt;Testing calculations&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-8">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
             <mxGeometry x="20" y="21" width="140" height="80" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Initial kinematics calculations, Dv over Dh and Dv over t graphs&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="_5mSTuPxr-ZiKRkBDSY7-11">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;strokeColor=#6c8ebf;fillStyle=solid;" parent="_5mSTuPxr-ZiKRkBDSY7-9" vertex="1">
-            <mxGeometry x="20" y="121" width="140" height="80" as="geometry" />
           </mxCell>
         </object>
       </root>

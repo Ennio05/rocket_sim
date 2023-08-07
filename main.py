@@ -1,7 +1,7 @@
 import pygame
-from ui import UserInterface
+import ui
 
-system = UserInterface()
+system = ui.UserInterface()
 
 run = True
 while run:
