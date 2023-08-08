@@ -36,6 +36,7 @@ while run:
                         text_input['active'] = True
                     else:
                         text_input['active'] = False
+                
 
             if event.type == pygame.KEYDOWN:
                 for text_input in system.text_inputs:
@@ -49,10 +50,16 @@ while run:
         color = system.color_state(text_input['active'])
         pygame.draw.rect(screen, color, text_input['rect'])
 
-        text_surface = text_font.render(text_input['text'], True, WHITE)
-        screen.blit(text_surface, (text_input['rect'].x+5, text_input['rect'].y+5))
+        label_text = text_font.render(text_input['text'], True, WHITE)
+        screen.blit(label_text, system.center_text(text_input['rect'], label_text))
 
         screen.blit(text_input['label'], (text_input['rect'].x - 100, text_input['rect'].y + 5))
+
+    pygame.draw.rect(screen, pygame.Color('chartreuse4'), system.confirm_button)
+    confirm_text = text_font.render('START SIMULATION', True, BLACK)
+    center_cord = ((system.confirm_button.width // 2 + system.confirm_button.x - confirm_text.get_rect().width//2), system.confirm_button.y - 5)
+
+    screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
     
 
     pygame.display.flip()

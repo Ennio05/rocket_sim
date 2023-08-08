@@ -11,12 +11,16 @@ BLUE = (0, 0, 255)
 class UserInterface():
 
     text_inputs = []
+    screen: pygame.Surface
+    confirm_button: pygame.Rect
 
     def __init__(self, surface) -> None:
 
         label_font = pygame.font.Font(None, 32)
 
         self.screen = surface
+
+        self.confirm_button = pygame.Rect(50, 400, 240, 32)
 
         speed_text = label_font.render('SPEED', True, BLACK)
         angle_text = label_font.render('ANGLE', True, BLACK)
@@ -29,8 +33,8 @@ class UserInterface():
         self.text_inputs.extend([speed_input, angle_input, height_input])
 
     def draw_input_box(self, x, y) -> pygame.Rect:
-        input_box = pygame.Rect(x, y, 140, 32)
-        return input_box
+        rect = pygame.Rect(x, y, 140, 32)
+        return rect
     
     def color_state(self, state):
         if state == False:
@@ -40,6 +44,10 @@ class UserInterface():
 
         return color
 
+    def center_text(self, target, text):
+        x = target.width // 2 + target.x - text.get_rect().width//2
+        y = target.height // 2 + target.y - text.get_rect().height//2
+        return (x, y)
 
 
 
