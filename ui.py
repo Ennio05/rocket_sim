@@ -10,7 +10,7 @@ BLUE = (0, 0, 255)
 
 class UserInterface():
 
-    text_inputs = []
+    text_inputs = {}
     screen: pygame.Surface
     confirm_button: pygame.Rect
 
@@ -30,8 +30,10 @@ class UserInterface():
         angle_input = {'text': '', 'active': False, 'rect': self.draw_input_box(150, 200), 'label': angle_text}
         height_input = {'text': '', 'active': False, 'rect': self.draw_input_box(150, 300), 'label': height_text}
 
-        self.text_inputs.extend([speed_input, angle_input, height_input])
-
+        self.text_inputs['speed'] = speed_input
+        self.text_inputs['angle'] = angle_input
+        self.text_inputs['height'] = height_input
+        
     def draw_input_box(self, x, y) -> pygame.Rect:
         rect = pygame.Rect(x, y, 140, 32)
         return rect

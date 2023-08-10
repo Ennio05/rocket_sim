@@ -53,3 +53,23 @@ ani = FuncAnimation(fig, update, interval=33, frames=np.linspace(0, 2 * time_max
                     init_func=init, blit=True)
 graph.show()
 
+class simulate():
+
+    speed: float
+    angle: int
+    height: float
+    x_speed: float
+    y_speed: float
+
+    def __init__(self, speed, angle, height):
+        self.angle = np.deg2rad(angle)
+        self.x_speed = np.cos(self.angle) * speed
+        self.y_speed = np.sin(self.angle) * speed
+        self.height = height
+
+    def test(self):
+        print(self.x_speed, self.y_speed)
+        print(self.angle + '*')
+        print(self.height + 'm')
+
+    

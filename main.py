@@ -1,8 +1,9 @@
 import pygame
+from graphing import simulate
 import ui
 
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1400
+SCREEN_HEIGHT = 850
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
@@ -22,6 +23,8 @@ pygame.display.update()
 
 system = ui.UserInterface(screen)
 
+inputs = system.text_inputs
+
 run = True
 while run:
       
@@ -29,34 +32,36 @@ while run:
         #if an in=game event is activated and it is the QUIT event (closing the window), the program stops
             if event.type == pygame.QUIT:
                 run = False
-            
+
             if event.type == pygame.MOUSEBUTTONDOWN:
-                for text_input in system.text_inputs:
-                    if text_input['rect'].collidepoint(event.pos):
-                        text_input['active'] = True
+                for input in inputs:
+                    if inputs[input]['rect'].collidepoint(event.pos):
+                        inputs[input]['active'] = True
                     else:
-                        text_input['active'] = False
+                        inputs[input]['active'] = False
 
                 if system.confirm_button.collidepoint(event.pos):
-                    print('test')
-                
+                    speed = int(inputs['speed']['text'])
+                    angle = int(inputs['angle']['text'])
+                    height = int(inputs['height']['text'])
+                    graph = simulate(speed, angle, height)
 
             if event.type == pygame.KEYDOWN:
-                for text_input in system.text_inputs:
-                    if True in text_input.values():
+                for input in inputs:
+                    if True in inputs[input].values():
                         if event.key == pygame.K_BACKSPACE:
-                            text_input['text'] = text_input['text'][:-1]
+                            inputs[input]['text'] = inputs[input]['text'][:-1]
                         else:
-                            text_input['text'] += event.unicode
+                            inputs[input]['text'] += event.unicode
 
-    for text_input in system.text_inputs:
-        color = system.color_state(text_input['active'])
-        pygame.draw.rect(screen, color, text_input['rect'])
+    for input in inputs:
+        color = system.color_state(inputs[input]['active'])
+        pygame.draw.rect(screen, color, inputs[input]['rect'])
 
-        label_text = text_font.render(text_input['text'], True, WHITE)
-        screen.blit(label_text, system.center_text(text_input['rect'], label_text))
+        label_text = text_font.render(inputs[input]['text'], True, WHITE)
+        screen.blit(label_text, system.center_text(inputs[input]['rect'], label_text))
 
-        screen.blit(text_input['label'], (text_input['rect'].x - 100, text_input['rect'].y + 5))
+        screen.blit(inputs[input]['label'], (inputs[input]['rect'].x - 100, inputs[input]['rect'].y + 5))
 
     pygame.draw.rect(screen, pygame.Color('chartreuse4'), system.confirm_button)
     confirm_text = text_font.render('START SIMULATION', True, BLACK)
@@ -67,6 +72,6 @@ while run:
 
     pygame.display.flip()
 
-    clock.tick(2)
+    clock.tick(30)
     
         
