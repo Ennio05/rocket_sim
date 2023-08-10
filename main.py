@@ -36,6 +36,9 @@ while run:
                         text_input['active'] = True
                     else:
                         text_input['active'] = False
+
+                if system.confirm_button.collidepoint(event.pos):
+                    print('test')
                 
 
             if event.type == pygame.KEYDOWN:
