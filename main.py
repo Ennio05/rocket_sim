@@ -1,6 +1,7 @@
 import pygame
 from graphing import simulate
 import ui
+import os
 
 SCREEN_WIDTH = 1400
 SCREEN_HEIGHT = 850
@@ -25,6 +26,9 @@ system = ui.UserInterface(screen)
 
 inputs = system.text_inputs
 
+image = None
+graph_list = []
+
 run = True
 while run:
       
@@ -45,6 +49,11 @@ while run:
                     angle = int(inputs['angle']['text'])
                     height = int(inputs['height']['text'])
                     graph = simulate(speed, angle, height)
+                    graph.run_graph()
+                    for filename in os.listdir('graphs/simulation'):
+                        graph_list.append(pygame.image.load(f'graphs/simulation/{filename}'))
+
+                    frame = 0
 
             if event.type == pygame.KEYDOWN:
                 for input in inputs:
@@ -68,6 +77,13 @@ while run:
     center_cord = ((system.confirm_button.width // 2 + system.confirm_button.x - confirm_text.get_rect().width//2), system.confirm_button.y - 5)
 
     screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
+
+    if graph_list:
+        screen.blit(graph_list[frame], (300, 50))
+        if frame == len(graph_list):
+            break
+        else:
+            frame += 1
     
 
     pygame.display.flip()

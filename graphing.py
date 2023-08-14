@@ -40,24 +40,15 @@ class simulate():
 
         return self.ln,
 
-    def update(self, frame):
-        self.y.append(frame)
-        self.x.append(function(frame, self.y_speed))
-        self.ln.set_data(self.x, self.y)
-        return self.ln,
-
-    def sss(self):
-        ani = FuncAnimation(self.fig, self.update, interval=33, frames=np.linspace(0, 2 * self.time_max, 128),
-                    init_func=self.create_graph, blit=True)
-        graph.savefig('graphs/simulation_1.gif')
-
     def run_graph(self):
         self.create_graph()
-        t = np.linspace(0, self.time_max, 120)
+        t = np.linspace(0, self.time_max * 2, 120)
         for i in t:
-            self.y.append(i)
-            self.x.append(self.function(i, self.y_))
+            self.x.append(i)
+            self.y.append(self.function(i, self.y_speed))
+            self.ax.plot(self.x, self.y)
 
-        self.ln.set_data(self.x, self.y)
+            filename = f'{next(a for a, x in enumerate(t) if x == i) + 1}.png'
+            self.fig.savefig(f'graphs/simulation/{filename}')
 
-        return self.ln,
+            print(next(a for a, x in enumerate(t) if x == i) + 1)
