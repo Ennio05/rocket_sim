@@ -1,6 +1,7 @@
 import pygame
 from graphing import simulate
 import ui
+import time
 import os
 
 SCREEN_WIDTH = 1400
@@ -29,6 +30,9 @@ inputs = system.text_inputs
 image = None
 graph_list = []
 
+def extract_frame_number(filename):
+    return int(filename.split("_")[1].split(".")[0])
+
 run = True
 while run:
       
@@ -49,11 +53,15 @@ while run:
                     angle = int(inputs['angle']['text'])
                     height = int(inputs['height']['text'])
                     graph = simulate(speed, angle, height)
+                    print(graph.total_time)
                     graph.run_graph()
-                    for filename in os.listdir('graphs/simulation'):
+                    
+                    filenames = os.listdir('graphs/simulation')
+                    sorted_filenames = sorted(filenames, key=extract_frame_number)
+                    for filename in sorted_filenames:
                         graph_list.append(pygame.image.load(f'graphs/simulation/{filename}'))
 
-                    frame = 0
+                    frame = 1
 
             if event.type == pygame.KEYDOWN:
                 for input in inputs:
@@ -79,15 +87,15 @@ while run:
     screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
 
     if graph_list:
-        screen.blit(graph_list[frame], (300, 50))
+        screen.blit(graph_list[frame - 1], (300, 50))
         if frame == len(graph_list):
-            break
+            pass
         else:
             frame += 1
     
 
     pygame.display.flip()
 
-    clock.tick(30)
+    clock.tick(10)
     
         
