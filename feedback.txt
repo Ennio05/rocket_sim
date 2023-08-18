@@ -1,0 +1,11 @@
+- Add units to labels
+- Make graph area larger
+- Make input area larger
+- Be able to compare previous graphs
+- Show max height and total time in labels
+- Add loading animation
+
+DOC: 
+- Overwrite text in input labels when clicked once 
+- Show text cursor in text inputs
+- Async running both scripts so I am able to do animation while rendering graphs

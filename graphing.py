@@ -18,7 +18,8 @@ class simulate():
     ln, = ax.plot([], [])
     x, y = [], []
 
-    def __init__(self, speed, angle, height):
+    def __init__(self, speed, angle, height = 0):
+        self.x, self.y = [], []
         self.angle = np.deg2rad(angle)
         self.x_speed = np.cos(self.angle) * speed
         self.y_speed = np.sin(self.angle) * speed
@@ -33,8 +34,8 @@ class simulate():
         return number   
 
     def create_graph(self):
-        self.ax.set_xlim(0, self.total_time * 1.01)
-        self.ax.set_ylim(0, self.height_max * 1)
+        self.ax.set_xlim(0, self.total_time * 1)
+        self.ax.set_ylim(0, self.height_max * 1.01)
         self.ax.grid()
         self.ax.set_xlabel('time (s)')
         self.ax.set_ylabel('height (m)')

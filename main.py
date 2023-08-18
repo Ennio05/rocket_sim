@@ -29,7 +29,6 @@ inputs = system.text_inputs
 
 image = None
 graph_list = []
-
 def extract_frame_number(filename):
     return int(filename.split("_")[1].split(".")[0])
 
@@ -53,7 +52,12 @@ while run:
                     angle = int(inputs['angle']['text'])
                     height = int(inputs['height']['text'])
                     graph = simulate(speed, angle, height)
-                    print(graph.total_time)
+                    pygame.draw.rect(screen, pygame.Color('lightskyblue3'), system.confirm_button)
+                    confirm_text = text_font.render('RENDERING GRAPH', True, BLACK)
+                    center_cord = ((system.confirm_button.width // 2 + system.confirm_button.x - confirm_text.get_rect().width//2), system.confirm_button.y - 5)
+
+                    screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
+                    pygame.display.flip()
                     graph.run_graph()
                     
                     filenames = os.listdir('graphs/simulation')
@@ -87,15 +91,19 @@ while run:
     screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
 
     if graph_list:
-        screen.blit(graph_list[frame - 1], (300, 50))
+        screen.blit(graph_list[frame - 1], (450, 50))
         if frame == len(graph_list):
             pass
         else:
             frame += 1
+    else:
+        pygame.draw.rect(screen, pygame.Color(BLACK), pygame.Rect(450, 50, SCREEN_WIDTH//5 * 3, SCREEN_HEIGHT - 100))
+        pygame.draw.rect(screen, pygame.Color(WHITE), pygame.Rect(455, 55, (SCREEN_WIDTH//5 * 3) - 10, SCREEN_HEIGHT - 110))
+
     
 
     pygame.display.flip()
 
-    clock.tick(10)
+    clock.tick(30)
     
         
