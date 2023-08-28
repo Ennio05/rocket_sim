@@ -91,7 +91,8 @@ while run:
     screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
 
     if graph_list:
-        screen.blit(graph_list[frame - 1], (450, 50))
+        placeholder = pygame.transform.smoothscale(graph_list[frame - 1], ((SCREEN_WIDTH//5 * 3) - 10, SCREEN_HEIGHT - 110))
+        screen.blit(placeholder, (455, 55))
         if frame == len(graph_list):
             pass
         else:
