@@ -47,18 +47,20 @@ while run:
                     else:
                         inputs[input]['active'] = False
 
-                if system.confirm_button.collidepoint(event.pos):
-                    speed = int(inputs['speed']['text'])
+                if system.confirm_button['rect'].collidepoint(event.pos):
+                    speed = float(inputs['speed']['text'])
                     angle = int(inputs['angle']['text'])
-                    height = int(inputs['height']['text'])
+                    height = float(inputs['height']['text'])
+                    
                     graph = simulate(speed, angle, height)
-                    pygame.draw.rect(screen, pygame.Color('lightskyblue3'), system.confirm_button)
-                    confirm_text = text_font.render('RENDERING GRAPH', True, BLACK)
-                    center_cord = ((system.confirm_button.width // 2 + system.confirm_button.x - confirm_text.get_rect().width//2), system.confirm_button.y - 5)
+                    system.confirm_button['active'] = True
+                    system.draw_confirm_button()
 
-                    screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
                     pygame.display.flip()
+
                     graph.run_graph()
+
+                    system.confirm_button['active'] = False
                     
                     filenames = os.listdir('graphs/simulation')
                     sorted_filenames = sorted(filenames, key=extract_frame_number)
@@ -76,19 +78,9 @@ while run:
                             inputs[input]['text'] += event.unicode
 
     for input in inputs:
-        color = system.color_state(inputs[input]['active'])
-        pygame.draw.rect(screen, color, inputs[input]['rect'])
+        system.draw_input_box(input)
 
-        label_text = text_font.render(inputs[input]['text'], True, WHITE)
-        screen.blit(label_text, system.center_text(inputs[input]['rect'], label_text))
-
-        screen.blit(inputs[input]['label'], (inputs[input]['rect'].x - 100, inputs[input]['rect'].y + 5))
-
-    pygame.draw.rect(screen, pygame.Color('chartreuse4'), system.confirm_button)
-    confirm_text = text_font.render('START SIMULATION', True, BLACK)
-    center_cord = ((system.confirm_button.width // 2 + system.confirm_button.x - confirm_text.get_rect().width//2), system.confirm_button.y - 5)
-
-    screen.blit(confirm_text, system.center_text(system.confirm_button, confirm_text))
+    system.draw_confirm_button()
 
     if graph_list:
         placeholder = pygame.transform.smoothscale(graph_list[frame - 1], ((SCREEN_WIDTH//5 * 3) - 10, SCREEN_HEIGHT - 110))
@@ -98,11 +90,8 @@ while run:
         else:
             frame += 1
     else:
-        pygame.draw.rect(screen, pygame.Color(BLACK), pygame.Rect(450, 50, SCREEN_WIDTH//5 * 3, SCREEN_HEIGHT - 100))
-        pygame.draw.rect(screen, pygame.Color(WHITE), pygame.Rect(455, 55, (SCREEN_WIDTH//5 * 3) - 10, SCREEN_HEIGHT - 110))
-
-    
-
+        system.draw_border()
+            
     pygame.display.flip()
 
     clock.tick(30)
