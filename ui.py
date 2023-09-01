@@ -73,9 +73,9 @@ class UserInterface():
     def draw_confirm_button(self):
         pygame.draw.rect(self.screen, pygame.Color(self.color_state(self.confirm_button['active'])), self.confirm_button['rect'])
         if self.confirm_button['active'] == False:
-            confirm_text = text_font.render('SIMULATE GRAPH', True, BLACK)
+            confirm_text = text_font.render('START SIMULATION', True, WHITE)
         else:
-            confirm_text = text_font.render('RENDERING GRAPH', True, BLACK)
+            confirm_text = text_font.render('RENDERING GRAPH', True, WHITE)
         self.screen.blit(confirm_text, self.center_text(self.confirm_button['rect'], confirm_text))
 
 

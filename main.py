@@ -70,12 +70,13 @@ while run:
                     frame = 1
 
             if event.type == pygame.KEYDOWN:
-                for input in inputs:
-                    if True in inputs[input].values():
-                        if event.key == pygame.K_BACKSPACE:
-                            inputs[input]['text'] = inputs[input]['text'][:-1]
-                        else:
-                            inputs[input]['text'] += event.unicode
+                if event.unicode.isdigit() == True or event.key == pygame.K_PERIOD or event.key == pygame.K_BACKSPACE:
+                    for input in inputs:
+                        if True in inputs[input].values():
+                            if event.key == pygame.K_BACKSPACE:
+                                inputs[input]['text'] = inputs[input]['text'][:-1]
+                            else:
+                                inputs[input]['text'] += event.unicode
 
     for input in inputs:
         system.draw_input_box(input)
